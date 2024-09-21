@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newproject.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="login">
+        <p class="lo">Smart Car Parking System</p>
+        <div>
+            <div class="name">
+                <div class="nav">
+                    <input placeholder="Enter Your Car Name" class="you"></input>
+                </div>
+            </div>
+
+            <div class="tar">
+
+                <input placeholder="Enter your Car Number" class="namey"></input>
+
+            </div>
+
+        </div>
+
+
+        <button class="th" onclick="activateCarCheckbox()">Add Car</button>
+
+        <script>
+            let currentCarIndex = 0;
+            // Function to check car checkboxes (C) and keep previous ones checked
+            function activateCarCheckbox() {
+                const carCheckboxes = document.querySelectorAll('input[type="checkbox"] + label');
+                let carCheckboxArray = [];
+
+                // Collect car checkbox elements
+                carCheckboxes.forEach((label) => {
+                    if (label.textContent.startsWith('C')) {
+                        carCheckboxArray.push(label.previousElementSibling);
+                    }
+                });
+
+                // Check the next car checkbox in a cyclic manner
+                if (carCheckboxArray.length > 0 && currentCarIndex < carCheckboxArray.length) {
+                    carCheckboxArray[currentCarIndex].checked = true;
+                    currentCarIndex = (currentCarIndex + 1) % carCheckboxArray.length;  // Move to the next checkbox
+                }
+            }
+        </script>
+
+        <button class="ch" onclick="deactivateCarCheckbox()">Remove Car</button>
+
+        <script>
+            // Function to uncheck car checkboxes (C) and keep others checked
+            function deactivateCarCheckbox() {
+                const carCheckboxes = document.querySelectorAll('input[type="checkbox"] + label');
+                let carCheckboxArray = [];
+
+                // Collect car checkbox elements
+                carCheckboxes.forEach((label) => {
+                    if (label.textContent.startsWith('C')) {
+                        carCheckboxArray.push(label.previousElementSibling);
+                    }
+                });
+
+                // Uncheck the next car checkbox in a cyclic manner
+                if (carCheckboxArray.length > 0 && currentCarIndex > 0) {
+                    currentCarIndex--;
+                    carCheckboxArray[currentCarIndex].checked = false;
+                }
+            }
+
+
+        </script>
+
+        <button class="mh" onclick="activateBikeCheckbox()">Add Bike</button>
+        <script>
+            let currentBikeIndex = 0;
+            // Function to check bike checkboxes (B) and keep previous ones checked
+            function activateBikeCheckbox() {
+                const bikeCheckboxes = document.querySelectorAll('input[type="checkbox"] + label');
+                let bikeCheckboxArray = [];
+
+                // Collect bike checkbox elements
+                bikeCheckboxes.forEach((label) => {
+                    if (label.textContent.startsWith('B')) {
+                        bikeCheckboxArray.push(label.previousElementSibling);
+                    }
+                });
+
+                // Check the next bike checkbox in a cyclic manner
+                if (bikeCheckboxArray.length > 0 && currentBikeIndex < bikeCheckboxArray.length) {
+                    bikeCheckboxArray[currentBikeIndex].checked = true;
+                    currentBikeIndex = (currentBikeIndex + 1) % bikeCheckboxArray.length;  // Move to the next checkbox
+                }
+            }
+
+        </script>
+
+
+        <button class="ph" onclick="deactivateBikeCheckbox()">Remove Bike</button>
+        <script>
+            // Function to uncheck bike checkboxes (B) and keep others checked
+            function deactivateBikeCheckbox() {
+                const bikeCheckboxes = document.querySelectorAll('input[type="checkbox"] + label');
+                let bikeCheckboxArray = [];
+
+                // Collect bike checkbox elements
+                bikeCheckboxes.forEach((label) => {
+                    if (label.textContent.startsWith('B')) {
+                        bikeCheckboxArray.push(label.previousElementSibling);
+                    }
+                });
+
+                // Uncheck the next bike checkbox in a cyclic manner
+                if (bikeCheckboxArray.length > 0 && currentBikeIndex > 0) {
+                    currentBikeIndex--;
+                    bikeCheckboxArray[currentBikeIndex].checked = false;
+                }
+            }
+        </script>
+
+    </div>
+
+
+
+
+    <div class="line">
+        <div class="section">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C1</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C2</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C3</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C4</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C5</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C6</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C7</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C8</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C9</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C10</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C11</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C12</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C13</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C14</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C15</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C16</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C17</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C18</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C19</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C20</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C21</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C22</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C23</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C24</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C25</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C26</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C27</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C28</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C29</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C30</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C31</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C32</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C33</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C34</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C35</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C36</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C37</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C38</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C39</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">C40</label>
+            </div>
+        </div>
+
+        <div class="section" id="bike">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B1</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B2</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B3</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B4</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B5</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B6</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B7</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B8</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B9</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B10</label>
+            </div>
+        </div>
+
+        <div class="section" id="bike">
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B11</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B12</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B13</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B14</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B15</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B16</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B17</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B18</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B19</label>
+            </div>
+            <div class="wrapper">
+                <input type="checkbox" class="check">
+
+                <label for="check">B20</label>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
