@@ -30,7 +30,7 @@
         </div>
 
 
-        <button class="th" onclick="activateCarCheckbox()">Add Car</button>
+        <button class="th" id="addCarBtn" onclick="activateCarCheckbox()" disabled>Add Car</button>
 
         <script>
             let currentCarIndex = 0;
@@ -54,7 +54,7 @@
             }
         </script>
 
-        <button class="ch" onclick="deactivateCarCheckbox()">Remove Car</button>
+        <button class="ch" id="removeCarBtn" onclick="deactivateCarCheckbox()" disabled>Remove Car</button>
 
         <script>
             // Function to uncheck car checkboxes (C) and keep others checked
@@ -79,7 +79,7 @@
 
         </script>
 
-        <button class="mh" onclick="activateBikeCheckbox()">Add Bike</button>
+        <button class="mh" id="addBikeBtn" onclick="activateBikeCheckbox()" disabled>Add Bike</button>
         <script>
             let currentBikeIndex = 0;
             // Function to check bike checkboxes (B) and keep previous ones checked
@@ -104,7 +104,7 @@
         </script>
 
 
-        <button class="ph" onclick="deactivateBikeCheckbox()">Remove Bike</button>
+        <button class="ph" id="removeBikeBtn" onclick="deactivateBikeCheckbox()" disabled>Remove Bike</button>
         <script>
             // Function to uncheck bike checkboxes (B) and keep others checked
             function deactivateBikeCheckbox() {
@@ -125,7 +125,28 @@
                 }
             }
         </script>
+  <button class="ji" onclick="enableButtons()">Login !</button>
+<script>
+    function enableButtons() {
+        // Select all four buttons by their IDs
+        const addCarBtn = document.getElementById('addCarBtn');
+        const removeCarBtn = document.getElementById('removeCarBtn');
+        const addBikeBtn = document.getElementById('addBikeBtn');
+        const removeBikeBtn = document.getElementById('removeBikeBtn');
 
+        // Enable the buttons
+        addCarBtn.disabled = false;
+        removeCarBtn.disabled = false;
+        addBikeBtn.disabled = false;
+        removeBikeBtn.disabled = false;
+
+        // Change button colors to indicate active state
+        addCarBtn.style.backgroundColor = 'green';
+        removeCarBtn.style.backgroundColor = 'green';
+        addBikeBtn.style.backgroundColor = 'green';
+        removeBikeBtn.style.backgroundColor = 'green';
+    }
+</script>
     </div>
 
 
