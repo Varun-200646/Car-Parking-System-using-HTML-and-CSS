@@ -28,7 +28,7 @@
     background-color: rgb(155, 134, 245);
     border: none;
     position: relative;
-    top: 15px;
+    top: 80px;
     right: 50px;
     font-size: 1rem;
 }
@@ -216,7 +216,7 @@ button {
 .ch {
     background-color:  rgb(155, 134, 245);
     position: relative;
-    bottom: 130px;
+    bottom: 78px;
     right: 50px;
 
 }
@@ -224,7 +224,7 @@ button {
 .mh {
     background-color:  rgb(155, 134, 245);
     position: relative;
-    bottom: 485px;
+    bottom: 420px;
     left: 120px;
 
 }
@@ -232,6 +232,27 @@ button {
 .ph {
     background-color:  rgb(155, 134, 245);
     position: relative;
-    bottom: 630px;
+    bottom: 580px;
     left: 120px;
+}
+
+.ji{
+    background-color:  rgb(155, 134, 245);
+    position: relative;
+    bottom: 1000px;
+    left: 30px;
+}
+
+/* Initial state: Buttons disabled with a gray background */
+button:disabled {
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* When enabled, the buttons will have a green background */
+button:not(:disabled) {
+    background-color: green;
+    color: white;
+    cursor: pointer;
 }
